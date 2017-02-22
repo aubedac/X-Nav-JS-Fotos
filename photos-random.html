@@ -1,0 +1,38 @@
+<html>
+<title> Ejercicio 5.5.7 </title>
+<head> Screen of random photos </head>
+<body>
+  <style>
+  #frame {
+    height: 300px;
+    width: 500px;
+    border: 2px solid black;
+  }
+  img {
+    height: 300px;
+    width: 500px;
+  }
+  </style>
+
+  <script>
+    function change() {
+      var div = document.getElementById('frame');
+      var imageList = ["http://www.sostenibilidad.com/media/128999/tigre2_g.jpg",
+                      "http://www.aftercluv.com/wp-content/uploads/bfi_thumb/Animales-sin-pelo-m9m53nq9532ea8y232m908o7rkpp0mdvb76032fvf0.jpg",
+                      "http://cdn.wonderfulengineering.com/wp-content/uploads/2016/01/Desktop-Wallpaper-9.jpg",
+                      "https://thechive.files.wordpress.com/2013/03/kickass-desktop-wallpapers-16.jpg?quality=85&strip=info&w=920",
+                      "http://static.thousandwonders.net/Plaza.de.Cibeles.original.16377.jpg",
+                      "http://lodzpost.com/wp-content/uploads/2016/10/light_move_festival_lodz.jpg"];
+      var index = Math.floor(Math.random() * imageList.length);
+      div.innerHTML = "<img src=" + imageList[index] + ">";
+    };
+  </script>
+
+  <p></p>
+  <div id="frame"> </div>
+  <p></p>
+  <input type="button" value="Change photo" onclick="change()">
+  <a href="javascript:change()"> Otra forma de cambiar la foto </a>
+  <script> change(); </script>
+</body>
+</html>
